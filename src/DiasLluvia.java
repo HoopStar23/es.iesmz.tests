@@ -9,7 +9,7 @@ public class DiasLluvia {
     public boolean registroDia(int dia, int mes, boolean haLlovido){
 
         if (dia >= 1 && dia <= 31 && mes >= 1 && mes <= 12) {
-            System.err.println("DIA REGISTRADO");
+            System.out.println("DIA REGISTRADO");
             if (haLlovido) {
                 System.out.println("DIA DE LLUVIA");
                 this.calendario[mes][dia] = haLlovido;
