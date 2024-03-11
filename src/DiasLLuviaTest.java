@@ -89,15 +89,70 @@ public class DiasLLuviaTest {
     }
 
     @Test
+    void testTrimestreLluvia1(){
+        DiasLluvia calendario = new DiasLluvia();
+
+        calendario.registroDia(10,2,true);
+        calendario.registroDia(11,2,true);
+        calendario.registroDia(12,2,true);
+
+        calendario.registroDia(10,4,true);
+        calendario.registroDia(11,4,true);
+        calendario.registroDia(12,4,true);
+        calendario.registroDia(13,4,true);
+        calendario.registroDia(14,4,true);
+        calendario.registroDia(15,4,true);
+
+
+        assertEquals(2, calendario.trimestraLluviosa());
+    }
+
+    @Test
+    void testTrimestreLluvia2(){
+        DiasLluvia calendario = new DiasLluvia();
+
+        calendario.registroDia(10,2,true);
+        calendario.registroDia(11,2,true);
+        calendario.registroDia(12,2,true);
+        calendario.registroDia(10,6,true);
+        calendario.registroDia(11,6,true);
+        calendario.registroDia(12,6,true);
+        calendario.registroDia(13,7,true);
+        calendario.registroDia(14,8,true);
+        calendario.registroDia(15,9,true);
+
+
+        assertEquals(3, calendario.trimestraLluviosa());
+    }
+
+    @Test
+    void testTrimestreLluvia3(){
+        DiasLluvia calendario = new DiasLluvia();
+
+        calendario.registroDia(10,2,true);
+        calendario.registroDia(11,2,true);
+        calendario.registroDia(12,2,true);
+        calendario.registroDia(10,6,true);
+        calendario.registroDia(11,6,true);
+        calendario.registroDia(12,6,true);
+        calendario.registroDia(13,7,true);
+        calendario.registroDia(14,8,true);
+        calendario.registroDia(15,9,true);
+
+
+        assertNotEquals(2, calendario.trimestraLluviosa());
+    }
+
+    @Test
     void testPrimerDia1(){
         DiasLluvia calendario = new DiasLluvia();
 
-        calendario.registroDia(10,1,true);
-        calendario.registroDia(11,1,true);
-        calendario.registroDia(12,1,true);
+        calendario.registroDia(10,2,true);
+        calendario.registroDia(11,2,true);
+        calendario.registroDia(12,2,true);
 
 
-        assertEquals(10, calendario.primerDiaLluvia());
+        assertEquals(41, calendario.primerDiaLluvia());
     }
 
     @Test
