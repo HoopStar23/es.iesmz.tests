@@ -50,9 +50,9 @@ public class DiasLluvia {
     }
 
     /*public int trimestraLluviosa(){
-        int [] trimestres = {1,2,3,4};
+        int [] trimestre = new int[calendario.length/4];
 
-        for (int i = 0; i < trimestres.length; i++) {
+        for (int i = 0; i < trimestre.length; i++) {
             for (int j = 0; j < calendario.length; j++) {
                 for (int k = 0; k < calendario[j].length; k++) {
                     if (calendario[i][j]) {
@@ -62,4 +62,19 @@ public class DiasLluvia {
             }
         }
     }*/
+
+    public int primerDiaLluvia(){
+        int dia = 1;
+
+        for (int i = 0; i < calendario.length; i++) {
+            for (int j = 0; j < calendario[i].length; j++) {
+                if (!calendario[i][j]) {
+                    dia++;
+                }else{
+                    break;
+                }
+            }
+        }
+        return dia;
+    }
 }
