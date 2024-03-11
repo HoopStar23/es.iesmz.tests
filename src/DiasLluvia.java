@@ -9,17 +9,13 @@ public class DiasLluvia {
     public boolean registroDia(int dia, int mes, boolean haLlovido){
 
         if (dia >= 1 && dia <= 31 && mes >= 1 && mes <= 12) {
-            System.out.println("DIA REGISTRADO");
             if (haLlovido) {
-                System.out.println("DIA DE LLUVIA");
-                this.calendario[mes][dia] = haLlovido;
+                this.calendario[mes-1][dia-1] = haLlovido;
             }else if (!haLlovido){
-                System.out.println("DIA NO HA LLUVIA");
-                this.calendario[mes][dia] = haLlovido;
+                this.calendario[mes-1][dia-1] = haLlovido;
             }
         }else{
             haLlovido = false;
-            System.err.println("DIA NO REGISTRADO");
         }
         return haLlovido;
     }
@@ -27,7 +23,7 @@ public class DiasLluvia {
     public boolean consultarDia(int dia, int mes){
         boolean llovio = false;
         if (dia >= 1 && dia <= 31 && mes >= 1 && mes <= 12) {
-            if (calendario[mes][dia]) {
+            if (calendario[mes-1][dia-1]) {
                 llovio = true;
             }
         }else{
@@ -70,8 +66,8 @@ public class DiasLluvia {
             for (int j = 0; j < calendario[i].length; j++) {
                 if (!calendario[i][j]) {
                     dia++;
-                }else{
-                    break;
+                }else {
+                    return dia;
                 }
             }
         }
